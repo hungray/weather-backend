@@ -2,9 +2,9 @@ name: Weather Alerts Cron Job
 
 on:
   schedule:
-    # Run every 30 minutes
+    # تشغيل كل 30 دقيقة
     - cron: '*/30 * * * *'
-  # Allow manual trigger from the GitHub Actions tab
+  # السماح بالتشغيل اليدوي
   workflow_dispatch:
 
 jobs:
@@ -14,38 +14,19 @@ jobs:
       - name: Checkout repository
         uses: actions/checkout@v4
 
-      - name: Install dependencies
-        run: |
-          cd backend
-          npm install
-
-      - name: Run backend
-        env:
-          FIREBASE_SERVICE_ACCOUNT_KEY: ${{ secrets.FIREBASE_SERVICE_ACCOUNT_KEY }}
-          GEMINI_API_KEY: ${{ secrets.GEMINI_API_KEY }}
-        run: |
-          cd backend
-          node index.js
-      - name: Checkout Repository
-        uses: actions/checkout@v4
-
       - name: Setup Node.js
         uses: actions/setup-node@v4
         with:
           node-version: '22'
 
-      - name: Install Dependencies
+      - name: Install dependencies
         working-directory: ./backend
-        run: |
-          cd backend
-          npm install
+        run: npm install
 
-      - name: Run Cron Job Script
+      - name: Run backend
         working-directory: ./backend
         env:
           RUN_CRON: "true"
           FIREBASE_SERVICE_ACCOUNT_KEY: ${{ secrets.FIREBASE_SERVICE_ACCOUNT_KEY }}
           GEMINI_API_KEY: ${{ secrets.GEMINI_API_KEY }}
-        run: |
-          cd backend
-          node index.js
+        run: node index.js
