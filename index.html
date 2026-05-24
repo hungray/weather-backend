@@ -1,0 +1,70 @@
+<!doctype html>
+<html lang="ar" dir="rtl">
+  <head>
+    <meta charset="UTF-8" />
+    <link rel="icon" type="image/png" href="/logo.png?v=2" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    
+    <!-- SEO Meta Tags -->
+    <title>طقس مصر وبلاد الشام | توقعات الطقس لمدة 15 يوماً</title>
+    <meta name="description" content="موقع طقس مصر وبلاد الشام لمتابعة أحوال الطقس اليوم وغداً وخلال 15 يوماً القادمة بدقة عالية في جميع المدن (القاهرة، دمشق، بيروت، عمان، القدس وغيرها). تتبع مسار الشمس وسرعة الرياح والرطوبة وتوقعات الأمطار لحظة بلحظة." />
+    <meta name="keywords" content="طقس مصر وبلاد الشام, الطقس في مصر, الطقس في الشام, أخبار الطقس, درجات الحرارة اليوم, الطقس غدا, توقعات الطقس 15 يوم, الطقس في القاهرة, الطقس في دمشق, الطقس في بيروت, الطقس في عمان, الطقس في القدس, weather egypt, درجة الحرارة, سرعة الرياح, طقس فلسطين, طقس الأردن, طقس سوريا, طقس لبنان" />
+    <meta name="robots" content="index, follow" />
+    <meta name="author" content="طقس مصر وبلاد الشام" />
+    
+    <!-- Open Graph / Facebook -->
+    <meta property="og:type" content="website" />
+    <meta property="og:title" content="طقس مصر وبلاد الشام | توقعات الطقس لمدة 15 يوماً" />
+    <meta property="og:description" content="توقعات الطقس في جميع المحافظات والمدن بدقة متناهية ساعة بساعة مع مؤشرات الأنشطة وتتبع مسار الشمس التفاعلي." />
+    <meta property="og:image" content="https://weather-egypt-app.web.app/logo.png" />
+    <meta property="og:url" content="https://weather-egypt-app.web.app/" />
+    <meta property="og:site_name" content="طقس مصر وبلاد الشام" />
+    <meta property="og:locale" content="ar_EG" />
+    
+    <!-- Twitter -->
+    <meta property="twitter:card" content="summary_large_image" />
+    <meta property="twitter:title" content="طقس مصر وبلاد الشام | توقعات الطقس لمدة 15 يوماً" />
+    <meta property="twitter:description" content="توقعات الطقس في جميع المحافظات والمدن بدقة متناهية ساعة بساعة مع مؤشرات الأنشطة وتتبع مسار الشمس التفاعلي." />
+    <meta property="twitter:image" content="https://weather-egypt-app.web.app/logo.png" />
+
+    <!-- Google Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;700;900&family=Cairo:wght@400;500;600;700;800;900&display=swap" rel="stylesheet">
+    
+    <!-- Structured Data JSON-LD for Google -->
+    <script type="application/ld+json">
+      {
+        "@context": "https://schema.org",
+        "@type": "WebApplication",
+        "name": "طقس مصر وبلاد الشام",
+        "url": "https://weather-egypt-app.web.app/",
+        "description": "تطبيق وموقع طقس متطور لعرض درجات الحرارة والرياح والرطوبة وتوقعات 15 يوماً ساعة بساعة لمدن مصر والشام.",
+        "applicationCategory": "WeatherApplication",
+        "operatingSystem": "All",
+        "browserRequirements": "Requires JavaScript. Requires HTML5.",
+        "offers": {
+          "@type": "Offer",
+          "price": "0",
+          "priceCurrency": "USD"
+        }
+      }
+    </script>
+
+    <style>
+      /* Prevent white flash before theme loads */
+      html { background-color: #0f172a; }
+      html.light { background-color: #f4f6f9; }
+    </style>
+  </head>
+  <body>
+    <div id="root"></div>
+    <script type="module" src="/src/main.jsx"></script>
+    <script>
+      // Apply theme immediately to prevent flash
+      if (localStorage.getItem('isDark') !== 'true') {
+        document.documentElement.classList.add('light');
+      }
+    </script>
+  </body>
+</html>
