@@ -2,9 +2,7 @@ name: Weather Alerts Cron Job
 
 on:
   schedule:
-    # تشغيل كل 30 دقيقة
     - cron: '*/30 * * * *'
-  # السماح بالتشغيل اليدوي
   workflow_dispatch:
 
 jobs:
@@ -20,13 +18,14 @@ jobs:
           node-version: '22'
 
       - name: Install dependencies
-        working-directory: ./backend
-        run: npm install
+        run: |
+          cd backend
+          npm install
 
       - name: Run backend
-        working-directory: ./backend
         env:
-          RUN_CRON: "true"
           FIREBASE_SERVICE_ACCOUNT_KEY: ${{ secrets.FIREBASE_SERVICE_ACCOUNT_KEY }}
           GEMINI_API_KEY: ${{ secrets.GEMINI_API_KEY }}
-        run: node index.js
+        run: |
+          cd backend
+          node index.js
